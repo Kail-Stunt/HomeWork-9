@@ -88,8 +88,10 @@ public class Main {
         for (int i : inputArray3) {
             if (inputArray3[stepOutArray] > 5000) {
                 outputArray3[stepOutArray] = true;
-            } else outputArray3[stepOutArray] = false;
-            stepOutArray++;
+            } else {
+                outputArray3[stepOutArray] = false;
+                stepOutArray++;
+            }
         }
         //Выводим значения входного и выходного массивов
         System.out.println("\nЗадача 3.");
