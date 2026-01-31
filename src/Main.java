@@ -29,16 +29,21 @@ public class Main {
         int min = inputArray1[1];
         //Перебираем все элементы входного массива, вычисляем максимальный и сумму всех элементов
         for (int i : inputArray1) {
-            if (i > max) max = i;
+            if (i > max) {
+                max = i;
+            }
             //Находим сумму всех элементов массива
             sum = sum + i;
             //Находим среднее значение элементов входного массива
             //Перебираем все элементы входного массива, вычисляем минимальный элемент
-            if (i < min) min = i;
+            if (i < min) {
+                min = i;
+            }
         }
         average = (float) sum / inputArray1.length;
         //Создаём и объявляем выходной массив
         float[] outputArray1 = {sum, max, min, average};
+
         //Выводим значения входного и выходного массивов
         System.out.println("Задача 1.");
         System.out.println("Входной массив (выплаты авторам контента): " + Arrays.toString(inputArray1));
@@ -56,11 +61,11 @@ public class Main {
         //Создаём и объявляем длину выходного массива, равную длине входного
         float[] outputArray2 = new float[inputArray2.length];
         //Вводим дополнительную переменную для доступа к элементам выходного массива из следующего цикла
-        int j = 0;
+        int stepOutArray = 0;
         //Вычисляем налоги для каждой выплаты
         for (int i : inputArray2) {
-            outputArray2[j] = (float) (i * 0.13);
-            j++;
+            outputArray2[stepOutArray] = (float) (i * 0.13);
+            stepOutArray++;
         }
         //Выводим значения входного и выходного массивов
         System.out.println("\nЗадача 2.");
@@ -78,13 +83,13 @@ public class Main {
         //Создаём и объявляем выходной массив с типом данных boolean
         boolean[] outputArray3 = new boolean[inputArray3.length];
         //Обнуляем дополнительную переменную, которую иcпользуем для доступа к элементам выходного массива из следующего цикла
-        j = 0;
+        stepOutArray = 0;
         //Проверяем все элементы входного массива на соответствие условию задачи и записываем значения в выходной массив
         for (int i : inputArray3) {
-            if (inputArray3[j] > 5000) {
-                outputArray3[j] = true;
-            } else outputArray3[j] = false;
-            j++;
+            if (inputArray3[stepOutArray] > 5000) {
+                outputArray3[stepOutArray] = true;
+            } else outputArray3[stepOutArray] = false;
+            stepOutArray++;
         }
         //Выводим значения входного и выходного массивов
         System.out.println("\nЗадача 3.");
@@ -103,7 +108,7 @@ public class Main {
         //Создаём и объявляем выходной массив с типом данных boolean
         boolean[] outputArray4 = new boolean[1];
         //Обнуляем дополнительную переменную
-        j = 0;
+        stepOutArray = 0;
         //Проверяем на отрицательные значения элементы входного массива и выходим из цикла проверки при появлении такого
         for (int i : inputArray4) {
             if (i >= 0) {
@@ -112,7 +117,7 @@ public class Main {
                 outputArray4[0] = false;
                 break;
             }
-            j++;
+            stepOutArray++;
         }
         //Выводим значения входного и выходного массивов
         System.out.println("\nЗадача 4.");
@@ -126,11 +131,11 @@ public class Main {
    */
         //Создаём и объявляем входной массив с остатками на кредитном счете клиента.
         int[] inputArray5 = {1500000, -15000, 300000, -220500, 1700050};
-        int[] outputArray5 = new int [1];
+        int[] outputArray5 = new int[1];
         //Находим число месяцев, когда компания была рентабельна
         for (int i : inputArray5) {
             if (i >= 0) {
-                outputArray5[0] = outputArray5[0] + 1;
+                outputArray5[0] = outputArray5[0]++;
             }
         }
         //Выводим значения входного и выходного массивов
